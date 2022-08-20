@@ -6,9 +6,9 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineExpose, ref } from "vue";
+import { defineExpose, ref } from "vue";
 
-defineProps<{ msg: string }>();
+const props = defineProps<{ msg: string }>();
 
 const message = ref("我是组件内的message");
 
