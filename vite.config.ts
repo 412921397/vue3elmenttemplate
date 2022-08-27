@@ -20,13 +20,22 @@ export default defineConfig(({ command, mode }) => {
     plugins: [
       vue(),
       AutoImport({
-        resolvers: [ElementPlusResolver()]
+        resolvers: [ElementPlusResolver({ importStyle: "css", exclude: new RegExp(/^(?!.*loading-directive).*$/) })]
       }),
       Components({
         resolvers: [ElementPlusResolver()]
       }),
       vueJsx()
     ],
+    css: {
+      preprocessorOptions: {
+        less: {
+          modifyVars: {
+            deep: ":deep()"
+          }
+        }
+      }
+    },
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "src")
