@@ -6,7 +6,6 @@ import qlRequest from "./service";
 import store from "./store";
 import router from "./router";
 
-import "normalize.css";
 import "./assets/css/index.css";
 
 interface IDataType {
